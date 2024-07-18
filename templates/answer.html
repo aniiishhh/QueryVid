@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryVid | Answer</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 text-white shadow-2xl">
+        <div class="container mx-auto flex justify-between items-center py-6 px-8">
+            <h1 class="text-5xl font-extrabold tracking-wide"><a href="/">QueryVid</a></h1>
+            <nav class="flex space-x-12 ml-8">
+                <a href="#"
+                    class="text-base font-semibold hover:text-yellow-300 transition duration-300 transform hover:scale-110">Welcome {{user.username}}</a>
+                <a href="/query-history"
+                    class="text-base font-semibold hover:text-yellow-300 transition duration-300 transform hover:scale-110">Query History</a>
+
+                <a href="/logout"
+                    class="text-base font-semibold hover:text-yellow-300 transition duration-300 transform hover:scale-110">Logout</a>
+            </nav>
+        </div>
+        <div class="border-t-4 border-yellow-400 mt-2"></div>
+    </header>
+
+    <br>
+    <br>
+
+    <!-- Answer Content -->
+    <div class="flex items-center justify-center bg-gray-50 py-12">
+        <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform max-w-3xl w-full">
+            <h2 class="text-center text-3xl font-bold text-gray-800 mb-6">{{detail.video_title}}</h2>
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">{{detail.question}}</h3>
+            <p class="text-gray-700 text-lg mb-6">{{detail.answer}}</p>
+            <hr class="my-6">
+            <a href="{{detail.video_link}}" class="text-purple-500 hover:text-purple-800 font-bold hover:underline">{{detail.video_link}}</a>
+        </div>
+    </div>
+
+
+
+    <footer class="text-center p-4 text-gray-700 text-sm">
+        Created by <b>Anish</b>.
+        Connect with me on <a href="https://www.linkedin.com/in/anish-k36/"
+            class="text-purple-500 hover:text-purple-800 font-bold hover:underline">LinkedIn</a> and <a
+            href="https://github.com/aniiishhh"
+            class="text-purple-500 hover:text-purple-800 font-bold hover:underline">GitHub</a>.
+    </footer>
+
+</body>
+
+</html>

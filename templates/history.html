@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryVid | History</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .query-box {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        .query-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            background-color: rgba(128, 90, 213, 0.1);
+        }
+
+        .query-box a {
+            display: block;
+            padding: 1rem;
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <header class="bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 text-white shadow-2xl">
+        <div class="container mx-auto flex justify-between items-center py-6 px-8">
+            <h1 class="text-5xl font-extrabold tracking-wide"><a href="/">QueryVid</a></h1>
+            <nav class="flex space-x-12 ml-8">
+                <a href="#"
+                    class="text-base font-semibold hover:text-yellow-300 transition duration-300 transform hover:scale-110">Welcome {{user.username}}</a>
+                <a href="/query-history"
+                    class="text-base font-semibold hover:text-yellow-300 transition duration-300 transform hover:scale-110">Query History</a>
+                <a href="/logout"
+                    class="text-base font-semibold hover:text-yellow-300 transition duration-300 transform hover:scale-110">Logout</a>
+            </nav>
+        </div>
+        <div class="border-t-4 border-yellow-400 mt-2"></div>
+    </header>
+
+    <!-- Query History -->
+    <div class="container mx-auto py-12 px-8">
+        <h2 class="text-center text-3xl font-bold text-gray-800 mb-8">Query History</h2>
+    
+        <div class="space-y-6">
+            <!-- Query Box 1 -->
+            {% for answer in answers reversed %}
+            <div
+                class="query-box bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                <a href="/answer-detail/{{answer.id}}">
+                    <p class="text-xs text-purple-500 hover:text-purple-800 font-bold hover:underline mb-2">{{answer.video_link}}</p>
+                    <h3 class="text-xl font-bold text-gray-800">{{answer.video_title}}</h3>
+                    <p class="text-md font-semibold text-gray-600 mt-2">Question: {{answer.question}}</p>
+                    <p class="text-sm text-gray-500 mt-2">Answer: {{answer.answer|truncatechars:120}}</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    </div>
+
+    <footer class="text-center p-4 text-gray-700 text-sm">
+        Created by <b>Anish</b>.
+        Connect with me on <a href="https://www.linkedin.com/in/anish-k36/"
+            class="text-purple-500 hover:text-purple-800 font-bold hover:underline">LinkedIn</a> and <a
+            href="https://github.com/aniiishhh"
+            class="text-purple-500 hover:text-purple-800 font-bold hover:underline">GitHub</a>.
+    </footer>
+
+</body>
+
+</html>
