@@ -52,9 +52,15 @@ To run QueryVid on your local machine, follow these steps:
 
 7. Enter the database details and the API keys in the `.env` file in the root directory. Your `.env` file should look something like this:
     ```
-    DATABASE_URL=your_database_url
-    ASSEMBLYAI_API_KEY=your_assemblyai_api_key
-    OPENAI_API_KEY=your_openai_api_key
+    ASSEMBLYAI_API_KEY = your_assemblyai_api_key
+    OPENAI_API_KEY = your_openai_api_key
+    
+    DB_ENGINE = "django.db.backends.postgresql_psycopg2"
+    DB_NAME = your_db_name
+    DB_USER = your_db_user
+    DB_PASSWORD = your_db_password
+    DB_HOST = your db_host
+    DB_PORT = your db_port
     ```
 
 8. Finally, run the application:
